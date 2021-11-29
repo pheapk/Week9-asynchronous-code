@@ -1,0 +1,50 @@
+<script>
+  function a() {
+    /*
+    return a Promise function that has an anonymous fuction as a argument, which calls 
+    setTimeout function that has anonymous function as an argument that 
+    */
+    return new Promise(function(resolve){
+      setTimeout(() => {
+        resolve('a');
+      }, 3000);
+    });
+  }
+
+  function b() {
+    return new Promise(function(resolve){
+      setTimeout(() => {
+        resolve('b');
+      }, 500);
+    });
+  }
+
+  function c() {
+    return new Promise(function(resolve){
+      setTimeout(() => {
+        resolve('c');
+      }, 1500);
+    });
+  }
+
+  const list = [a, b, c];
+  for (fn of list){
+    //console.log(fn);
+    console.log(`function: ${fn.name}`);
+    fn().then((done) => {
+      //console.log(done);
+      console.log(`output: ${done}`);
+    });
+  }
+
+  /*
+  With 3000 each, they run at the same time 
+  and display the a b c at the same time.
+  */
+  /*
+  a - 3000, b - 500, c-1500
+  In this case, output will be b c a in that order 
+  because of the timer difference 
+  */
+
+</script>
