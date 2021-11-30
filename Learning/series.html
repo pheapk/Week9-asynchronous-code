@@ -1,0 +1,52 @@
+<script>
+  function a() {
+    /*
+    return a Promise function that has an anonymous fuction as a argument, which calls 
+    setTimeout function that has anonymous function as an argument that 
+    */
+    return new Promise(function(resolve){
+      setTimeout(function(){
+        resolve('a');
+      }, 3000);
+    });
+  }
+
+  function b() {
+    return new Promise(function(resolve){
+      setTimeout(function(){
+        resolve('b');
+      }, 500);
+    });
+  }
+
+  function c() {
+    return new Promise(function(resolve){
+      setTimeout(function(){
+        resolve('c');
+      }, 1500);
+    });
+  }
+
+  const list = [a, b, c];
+  (async function() {
+    for (fn of list){
+      const result = await fn(); // note the .then is not being use here, so the call is not async
+      console.log(result);
+      
+    }
+  })(); // wrap inside parentheses and add "()" at the end
+  // so the code will execute on the spot without having to
+  //call the function
+
+  /*
+  With 3000 each, they run at the same time 
+  and display the a b c at the same time.
+  */
+  /*
+  a - 3000, b - 500, c-1500
+  In this case, output will be a b c in that order 
+  even though the timer is different, 
+  because it runs sequentialy, one after another
+  */
+
+</script>

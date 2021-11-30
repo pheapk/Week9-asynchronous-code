@@ -1,0 +1,51 @@
+<script>
+  var url = [];
+  urls.push('http://student.mit.edu/catalog/m1a.html');
+  urls.push('http://student.mit.edu/catalog/m1b.html');
+  urls.push('http://student.mit.edu/catalog/m1c.html');
+  urls.push('http://student.mit.edu/catalog/m2a.html');
+  urls.push('http://student.mit.edu/catalog/m2b.html');
+  urls.push('http://student.mit.edu/catalog/m2c.html');
+  urls.push('http://student.mit.edu/catalog/m3a.html');
+  urls.push('http://student.mit.edu/catalog/m3b.html');
+  urls.push('http://student.mit.edu/catalog/m3c.html');
+  urls.push('http://student.mit.edu/catalog/m4a.html');
+  urls.push('http://student.mit.edu/catalog/m4b.html');
+  urls.push('http://student.mit.edu/catalog/m4c.html');
+  urls.push('http://student.mit.edu/catalog/m4d.html');
+  urls.push('http://student.mit.edu/catalog/m4e.html');
+  urls.push('http://student.mit.edu/catalog/m4f.html');
+  urls.push('http://student.mit.edu/catalog/m4g.html');
+
+  var fetch = require('note-fetch');
+
+  var makeRequest = async function (url, counter){
+    const response = await fetch(url);
+    const data = await response.text();
+    return 'Done: ' + counter; // which ever finish first, will return here
+  }
+  /* RESULT
+  Done: 12
+  Done: 4
+  Done: 45
+  etc 
+  depending on the response time from those urls, 
+  the order will be different at each re-run
+  */
+  
+  url.forEach(function(url, i){
+    makeRequest(url, i).then(function(result){
+      console.log(result);
+    });
+  })
+
+  // only work in sever alows CORS
+  (async function() {
+    let url = 'https://fonts.googleapis.com/css2?family=Tangerine:wght@700&display=swap';
+    const res = await fetch(url);
+    const data = await res.text();
+    console.log('GOOGLE FONT: ' + data);
+  })();
+
+
+</script>
