@@ -38,11 +38,12 @@ Instructions:
     document.body.appendChild(lisbonDiv);
   };
 
+    // replace key
   const urlArray = [
-    'https://api.openweathermap.org/data/2.5/weather?q=London,uk&APPID=7b68bf0910a2a7530b9929d01904bc79',
-    'https://api.openweathermap.org/data/2.5/weather?q=Houston&APPID=7b68bf0910a2a7530b9929d01904bc79',
-    'https://api.openweathermap.org/data/2.5/weather?q=Lisbon&APPID=7b68bf0910a2a7530b9929d01904bc79',
-    'https://api.openweathermap.org/data/2.5/weather?q=Baltimore&APPID=7b68bf0910a2a7530b9929d01904bc79',
+    'https://api.openweathermap.org/data/2.5/weather?q=London,uk&APPID=keyhere',
+    'https://api.openweathermap.org/data/2.5/weather?q=Houston&APPID=keyhere',
+    'https://api.openweathermap.org/data/2.5/weather?q=Lisbon&APPID=keyhere',
+    'https://api.openweathermap.org/data/2.5/weather?q=Baltimore&APPID=keyhere',
   ];
 
   urlArray.forEach(async (url) => {

@@ -26,7 +26,8 @@ window.onload = function initialize(){
 
 function renderMap(data){
 
-  mapboxgl.accessToken = 'pk.eyJ1Ijoic29mdGV4cGVyaW1lbnQiLCJhIjoiY2tjMngyZm9rMDFvajJzczJ3aWo0bnh6aiJ9.Bc_qK9Xf8SFBXkFM_x2gpg';
+// replace mapbox key
+  mapboxgl.accessToken = 'keyhere';
     var map = new mapboxgl.Map({
         container: 'map',
         style: 'mapbox://styles/mapbox/dark-v10',

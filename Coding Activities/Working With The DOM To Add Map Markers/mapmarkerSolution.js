@@ -1,6 +1,7 @@
 function createMapMarker() {
+  // replace key
   mapboxgl.accessToken =
-    'pk.eyJ1IjoidGVzdHVzZXIxMDAwIiwiYSI6ImNraDkzZ2pkMzAzMHoycnBmMXpvZ3UwZnMifQ.jAE4YsPeAJv50VK92NSpOQ';
+    'mapboxkeyhere';
 
   let map = new mapboxgl.Map({
     container: 'map',
